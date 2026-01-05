@@ -16,6 +16,14 @@ chmod +x install.sh
 ./install.sh
 ```
 
+### Using nix
+
+```
+git clone https://github.com/bishalsss/shortener
+cd shortener
+nix profile install .
+```
+
 ## Usage
 Simply type the command in your terminal:
 ```
