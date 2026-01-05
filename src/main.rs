@@ -1,4 +1,5 @@
 use inquire::Text;
+use ureq::get;
 
 fn main() {
     let banner = "
@@ -25,12 +26,11 @@ fn main() {
                     format!("https://tinyurl.com/api-create.php?url={}", url)
                 };
 
-                // ureq 3.x logic: call -> body_mut -> read_to_string
-                let mut res = ureq::get(&api).call().unwrap();
+                let mut res = get(&api).call().unwrap();
                 let short = res.body_mut().read_to_string().unwrap();
 
                 println!("Shortened URL: {}", short);
-                break; // Exits loop after shortening
+                break;
             }
             "3" => break,
             _ => println!("Invalid option.\n"),
