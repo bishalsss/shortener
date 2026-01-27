@@ -24,11 +24,20 @@ cd shortener
 nix profile install .
 ```
 
+## using Docker
+```bash
+git clone https://github.com/bishalsss/shortener
+cd Shortener
+docker build -t Shortener .
+docker run -it Shortener
+```
+
 ## Usage
 Simply type the command in your terminal:
 ```
 shortener
 ```
+
 ## Dependencies
  * rust / cargo
  * inquire (input)
